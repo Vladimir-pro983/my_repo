@@ -27,8 +27,8 @@ def main():
         images = driver.find_elements(By.TAG_NAME, "img")
         print(f"Картинок на странице после загрузки: {len(images)}")
 
-        # 4. Берём 3-ю картинку (индекс 3)
-        third_image = images[3]
+        # 4. Берём 3-ю картинку (индекс 2)
+        third_image = images[2]
 
         # 5. Читаем значение атрибута src и выводим в консоль
         src_value = third_image.get_attribute("src")
