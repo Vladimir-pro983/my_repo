@@ -14,7 +14,7 @@ def test_shop_purchase():
     """
 
     # Инициализация драйвера Firefox
-    driver = webdriver.Firefox()
+    driver = webdriver.
     driver.maximize_window()
 
     # Переменная для хранения итоговой стоимости

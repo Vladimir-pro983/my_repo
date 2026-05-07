@@ -1,11 +1,12 @@
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from pages.LoginPage import LoginPage
 from pages.ProductsPage import ProductsPage
 from pages.CartPage import CartPage
 from pages.CheckoutPage import CheckoutPage
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 
 def test_shop_purchase(firefox_driver):
@@ -27,10 +28,11 @@ def test_shop_purchase(firefox_driver):
     cart_page.checkout()
 
     # Заполнение формы
-    # Примечание: по ТЗ должны быть "Иван", "Петров", но сайт не принимает кириллицу
+    # Примечание: по ТЗ "Иван", "Петров", но сайт не принимает кириллицу
     checkout_page = CheckoutPage(firefox_driver)
     checkout_page.fill_form("Ivan", "Petrov", "123456")
 
     # Проверка итоговой суммы
     total = checkout_page.get_total_price()
-    assert total == "58.29", f"Ожидалась сумма $58.29, но получена ${total}"
+    expected = "58.29"
+    assert total == expected, f"Ожидалась сумма ${expected}, получена ${total}"

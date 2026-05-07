@@ -12,9 +12,9 @@ class CalculatorPage:
 
     def open(self):
         """Открыть страницу калькулятора"""
-        self.driver.get(
-            "https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html"
-        )
+        url = "https://bonigarcia.dev/selenium-webdriver-java/"
+        url += "slow-calculator.html"
+        self.driver.get(url)
 
     def set_delay(self, seconds):
         """Установить задержку в секундах"""

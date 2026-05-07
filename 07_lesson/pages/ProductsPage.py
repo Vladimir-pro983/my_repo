@@ -9,10 +9,11 @@ class ProductsPage:
 
     def add_to_cart(self, product_name):
         """Добавить товар в корзину по имени"""
-        button = self.driver.find_element(
-            By.XPATH,
-            f"//div[text()='{product_name}']/ancestor::div[@class='inventory_item']//button"
+        xpath = (
+            f"//div[text()='{product_name}']"
+            f"/ancestor::div[@class='inventory_item']//button"
         )
+        button = self.driver.find_element(By.XPATH, xpath)
         button.click()
 
     def go_to_cart(self):

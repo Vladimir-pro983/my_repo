@@ -10,13 +10,17 @@ from webdriver_manager.chrome import ChromeDriverManager
 def driver():
     """Фикстура для Chrome (для тестов формы и калькулятора)"""
     chrome_options = ChromeOptions()
-    chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    chrome_options.add_experimental_option(
+        'excludeSwitches', ['enable-logging']
+    )
     chrome_options.add_experimental_option("prefs", {
         "credentials_enable_service": False,
         "profile.password_manager_enabled": False,
         "profile.default_content_setting_values.notifications": 2
     })
-    chrome_options.add_argument("--disable-blink-features=AutomationControlled")
+    chrome_options.add_argument(
+        "--disable-blink-features=AutomationControlled"
+    )
     chrome_options.add_argument("--disable-infobars")
     chrome_options.add_argument("--disable-save-password-bubble")
 

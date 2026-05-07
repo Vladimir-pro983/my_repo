@@ -24,9 +24,9 @@ class FormPage:
 
     def open(self):
         """Открыть страницу формы"""
-        self.driver.get(
-            "https://bonigarcia.dev/selenium-webdriver-java/data-types.html"
-        )
+        url = "https://bonigarcia.dev/selenium-webdriver-java/"
+        url += "data-types.html"
+        self.driver.get(url)
 
     def fill_form(self):
         """Заполнить все поля формы"""
